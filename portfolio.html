@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaia Heichal</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-27734646-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = (document.location.protocol === 'https:' ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+ <div class="image-container">
+    <img src="images/synapses.jpeg" alt="synapses">
+    <img src="images/hethem.jpg" alt="hethem">
+    <img src="images/anechoic1.jpg" alt="anechoic">
+     <video class="hover-video" autoplay loop muted playsinline>
+        <source src="video/edge.mov" type="video/mp4">
+    </video>
+    <img src="images/diptych.png" alt="diptych">
+    <img src="images/DSC06234_LevelsSharp.jpg" alt="at4">
+    <img src="images/DSC06328_LevelsSharpColor.jpg" alt="at5">
+   
+    <img src="images/chaos.jpg" alt="chaos">
+    <img src="images/DSC06217_LevelsCrop.jpg" alt="at">
+    <img src="images/DSC06231_LevelsSharp.jpg" alt="at2">
+    <img src="images/DSC06233_LevelsSharp.jpg" alt="at3">
+     <img src="images/IMG_9413.PNG" alt="ashod3 ">
+    <img src="images/DSC06237.JPG" alt="hh1">
+    <img src="images/tst2.png" alt="tst2">
+    <img src="images/853DA414-3258-43AB-B98D-59E65205C9FA.JPG" alt="ashod">
+    <img src="images/DSC09014.JPG" alt="wfs">
+    <img src="images/IMG_9410.PNG" alt="ashod2">
+    <img src="images/IMG_9765.jpg" alt="pa">
+    <img src="images/tst.png" alt="tst">
+    <img src="images/DSC06361_LevelsColorSharp.jpg" alt="at6">
+   
+
+
+</div>
+       
+
+<script>
+  const videos = document.querySelectorAll('.hover-video');
+
+  videos.forEach(video => {
+    video.addEventListener('mouseenter', () => {
+      video.muted = false;   // unmute
+      video.play();           // play in case it paused
+    });
+
+    video.addEventListener('mouseleave', () => {
+      video.muted = true;    // mute again
+    //   video.play();          // optionally pause
+    });
+  });
+
+  const radios = document.querySelectorAll('.radio-group input[type="radio"]');
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      const url = radio.dataset.url; // get the page URL
+      if (url) {
+        window.location.href = url;   // navigate
+      }
+    });
+  });
+
+  // Only add home link if we are NOT on index.html
+  if (!window.location.pathname.endsWith('index.html') && !window.location.pathname.endsWith('/')) {
+    const container = document.createElement('a');
+    container.href = 'index.html';
+
+    const h1 = document.querySelector('h1');
+    // const h2 = document.querySelector('h2');
+
+    // Wrap the h1 and h2 in the link
+    h1.parentNode.insertBefore(container, h1);
+    container.appendChild(h1);
+    // container.appendChild(h2);
+  }
+</script>
+
+</body>
+</html>

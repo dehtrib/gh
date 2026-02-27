@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaia Heichal</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-27734646-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = (document.location.protocol === 'https:' ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</head>
+<body>
+
+  <h1>Gaia Heichal</h1>
+  <h2>Sound Art / Audio Engineer</h2>
+  <a href="files/GaiaHeichal_CV2025.pdf" target="_blank">CV</a>
+<div class="radio-group">
+  <label>
+    <input type="radio" name="section" data-url="portfolio.html"> Portfolio
+  </label>
+  <label>
+    <input type="radio" name="section" data-url="contact.html"> Contact
+  </label>
+  <label>
+    <input type="radio" name="section" data-url="links.html"> Links
+  </label>
+</div>
+
+<script>
+  const radios = document.querySelectorAll('.radio-group input[type="radio"]');
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      const url = radio.dataset.url; // get the page URL
+      if (url) {
+        window.location.href = url;   // navigate
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

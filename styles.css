@@ -1,0 +1,95 @@
+  body {
+            font-family: Arial;
+            text-align: center;
+            /* margin-top: 150px; */
+          
+        }
+
+        h1 {
+            margin-top: 150px;
+            margin-bottom: 10px;
+            font-size:18px;
+            font-weight: normal;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            font-weight: normal;
+            font-size:17px;
+        }
+
+        h3 {
+            font-weight: normal;
+            font-size:16px;
+            margin-bottom: 3px;
+        }
+        /* Hyperlink styling */
+        a {
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Radio labels */
+        .radio-group label {
+            display: block;
+            margin: 10px 0;
+            cursor: pointer;
+            text-decoration: none;
+            list-style: none;
+            font-size: 16px;
+        }
+
+        .radio-group label:hover {
+            text-decoration: underline;
+        }
+
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+
+    input[type="radio"] {
+  display: none;
+}
+
+
+
+.image-container {
+  /* margin-top: 20px; */
+  /* column-gap: 24px; horizontal spacing */
+  /* row-gap: 254px;    vertical spacing (ROWS) */
+  column-count: 3;
+  column-gap: 16px;
+}
+
+.image-container a {
+  break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+/* Images fill grid cells */
+.image-container img,
+.image-container video {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  /* object-fit: cover; */
+  /* flex-direction: column; */
+}
+
+.hover-video {
+  /* width: 300px; */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+/* 
+.hover-video:hover {
+  transform: scale(1.05);
+} */
