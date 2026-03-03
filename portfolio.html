@@ -51,32 +51,34 @@
     <img src="images/tst.png" alt="tst">
     <img src="images/DSC06361_LevelsColorSharp.jpeg" alt="at6">
     <img src="images/DSC09056.jpeg" alt="wfs2"> -->
-    <script defer>
-    const mediaFiles = [
+<script defer>
+    const imageFiles = [
       "photo1.jpg",
-      "photo2.png",
-      "video1.mp4"
+      "photo2.png"
+    ];
+
+    const videoFiles = [
+      "video1.mp4",
+      "video2.webm"
     ];
 
     const gallery = document.getElementById("gallery");
 
-    mediaFiles.forEach(file => {
-      const extension = file.split('.').pop().toLowerCase();
-      let element;
+    // Add images
+    imageFiles.forEach(file => {
+      const img = document.createElement("img");
+      img.src = "images/" + file;
+      img.loading = "lazy";
+      gallery.appendChild(img);
+    });
 
-      if (["jpg", "jpeg", "png", "gif", "webp"].includes(extension)) {
-        element = document.createElement("img");
-        element.src = "images/" + file;
-      } 
-      else if (["mp4", "webm"].includes(extension)) {
-        element = document.createElement("video");
-        element.src = "images/" + file;
-        element.controls = true;
-      }
-
-      if (element) {
-        gallery.appendChild(element);
-      }
+    // Add videos
+    videoFiles.forEach(file => {
+      const video = document.createElement("video");
+      video.src = "videos/" + file;
+      video.controls = true;
+      video.preload = "metadata";
+      gallery.appendChild(video);
     });
   </script>
 
