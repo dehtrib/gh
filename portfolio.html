@@ -27,7 +27,7 @@
 <body>
 
  <div class="image-container">
-    <img src="images/synapses.jpeg" alt="synapses">
+    <!-- <img src="images/synapses.jpeg" alt="synapses">
     <img src="images/hethem.jpg" alt="hethem">
     <img src="images/anechoic1.jpg" alt="anechoic">
      <video class="hover-video" autoplay loop muted playsinline>
@@ -50,8 +50,36 @@
     <img src="images/IMG_9765.jpg" alt="pa">
     <img src="images/tst.png" alt="tst">
     <img src="images/DSC06361_LevelsColorSharp.jpeg" alt="at6">
-    <img src="images/DSC09056.jpeg" alt="wfs2">
-   
+    <img src="images/DSC09056.jpeg" alt="wfs2"> -->
+    <script defer>
+    const mediaFiles = [
+      "photo1.jpg",
+      "photo2.png",
+      "video1.mp4"
+    ];
+
+    const gallery = document.getElementById("gallery");
+
+    mediaFiles.forEach(file => {
+      const extension = file.split('.').pop().toLowerCase();
+      let element;
+
+      if (["jpg", "jpeg", "png", "gif", "webp"].includes(extension)) {
+        element = document.createElement("img");
+        element.src = "images/" + file;
+      } 
+      else if (["mp4", "webm"].includes(extension)) {
+        element = document.createElement("video");
+        element.src = "images/" + file;
+        element.controls = true;
+      }
+
+      if (element) {
+        gallery.appendChild(element);
+      }
+    });
+  </script>
+
 
 
 </div>
