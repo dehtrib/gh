@@ -89,6 +89,11 @@
   cursor: pointer;
   transition: transform 0.2s ease;
 }
+
+.cc {
+  height: 50%;
+  width: 50%;
+}
 /* 
 .hover-video:hover {
   transform: scale(1.05);
