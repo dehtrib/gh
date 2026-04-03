@@ -63,7 +63,7 @@
   /* column-gap: 24px; horizontal spacing */
   /* row-gap: 254px;    vertical spacing (ROWS) */
   column-count: 3;
-  column-gap: 16px;
+  column-gap: 14px;
 }
 
 .image-container a {
