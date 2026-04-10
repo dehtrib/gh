@@ -76,7 +76,8 @@
 /* Images fill grid cells */
 .image-container img,
 .image-container video {
-  width: 100%;
+  /* width: 100%; */
+  width: auto;
   height: auto;
   display: inline-block;
   /* object-fit: cover; */
