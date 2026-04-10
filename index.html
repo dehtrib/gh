@@ -48,7 +48,7 @@
   const radios = document.querySelectorAll('.radio-group input[type="radio"]');
 
   radios.forEach(radio => {
-    radio.addEventListener('change', () => {
+    radio.addEventListener('click', () => {
       const url = radio.dataset.url; // get the page URL
       if (url) {
         window.location.href = url;   // navigate
