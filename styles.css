@@ -77,7 +77,7 @@
 .image-container img,
 .image-container video {
   /* width: 100%; */
-  width: auto;
+  width: 70%;
   height: auto;
   display: inline-block;
   /* object-fit: cover; */
