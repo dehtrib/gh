@@ -115,11 +115,13 @@ img.cu{
 
   h1 {
     margin-top: 60px;   /* was 150px → too big for mobile */
+    margin-bottom: 5px;
     font-size: 20px;
   }
 
   h2 {
     font-size: 18px;
+    margin-bottom: 10px;
   }
 
   a {
