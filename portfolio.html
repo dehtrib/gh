@@ -127,17 +127,97 @@
 <script>
   const videos = document.querySelectorAll('.hover-video');
 
+  // videos.forEach(video => {
+  //   video.addEventListener('mouseenter', () => {
+  //     video.muted = false;   // unmute
+  //     video.play();           // play in case it paused
+  //   });
+
+  //   video.addEventListener('mouseleave', () => {
+  //     video.muted = true;    // mute again
+  //   //   video.play();          // optionally pause
+  //   });
+  // });
+
+  
+
+/*  MOBILE: scroll autoplay */
+function isMobile() {
+  return window.matchMedia("(max-width: 768px)").matches;
+}
+
+/* =========================
+   DESKTOP: hover behavior
+========================= */
+if (!isMobile()) {
   videos.forEach(video => {
     video.addEventListener('mouseenter', () => {
-      video.muted = false;   // unmute
-      video.play();           // play in case it paused
+      video.muted = false;
+      video.play();
     });
 
     video.addEventListener('mouseleave', () => {
-      video.muted = true;    // mute again
-    //   video.play();          // optionally pause
+      video.muted = true;
     });
   });
+}
+
+
+/* =========================
+   MOBILE: scroll autoplay
+========================= */
+if (isMobile() && videos.length > 0) {
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+
+      if (entry.isIntersecting) {
+
+        // ensure autoplay works
+        video.muted = true;
+
+        // pause all others
+        videos.forEach(v => {
+          if (v !== video) v.pause();
+        });
+
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, {
+    threshold: 0.6
+  });
+
+  videos.forEach(video => observer.observe(video));
+}
+// if (isMobile()) {
+//   const videos = document.querySelectorAll('.hover-video');
+
+//   const observer = new IntersectionObserver((entries) => {
+//     entries.forEach(entry => {
+//       const video = entry.target;
+
+//       if (entry.isIntersecting) {
+
+//         // pause others
+//         videos.forEach(v => {
+//           if (v !== video) v.pause();
+//         });
+
+//         video.play().catch(() => {});
+//       } else {
+//         video.pause();
+//       }
+//     });
+//   }, {
+//     threshold: 0.6
+//   });
+
+//   videos.forEach(video => observer.observe(video));
+// }
 
   const radios = document.querySelectorAll('.radio-group input[type="radio"]');
 
@@ -164,35 +244,6 @@
     // container.appendChild(h2);
   }
 
-  
-  function isMobile() {
-    return window.matchMedia("(max-width: 768px)").matches;
-  }
-
-  if (isMobile()) {
-    const videos = document.querySelectorAll('.autoplay-video');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const video = entry.target;
-
-        if (entry.isIntersecting) {
-          // pause all others (important for mobile performance)
-          videos.forEach(v => {
-            if (v !== video) v.pause();
-          });
-
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      });
-    }, {
-      threshold: 0.6
-    });
-
-    videos.forEach(video => observer.observe(video));
-  }
 
 </script>
 
