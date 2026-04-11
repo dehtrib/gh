@@ -114,14 +114,14 @@ img.cu{
   }
 
   h1 {
-    margin-top: 80px;   /* was 150px → too big for mobile */
+    margin-top: 85px;   /* was 150px → too big for mobile */
     margin-bottom: 5px;
     font-size: 20px;
   }
 
   h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 19px;
+    margin-bottom: 15px;
   }
 
   a {
