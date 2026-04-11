@@ -163,6 +163,37 @@
     container.appendChild(h1);
     // container.appendChild(h2);
   }
+
+  
+  function isMobile() {
+    return window.matchMedia("(max-width: 768px)").matches;
+  }
+
+  if (isMobile()) {
+    const videos = document.querySelectorAll('.autoplay-video');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+
+        if (entry.isIntersecting) {
+          // pause all others (important for mobile performance)
+          videos.forEach(v => {
+            if (v !== video) v.pause();
+          });
+
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, {
+      threshold: 0.6
+    });
+
+    videos.forEach(video => observer.observe(video));
+  }
+
 </script>
 
 </body>
