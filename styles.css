@@ -105,3 +105,54 @@ img.cu{
 .hover-video:hover {
   transform: scale(1.05);
 } */
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    margin-top: 60px;   /* was 150px → too big for mobile */
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  a {
+    font-size: 18px;   /* easier to tap */
+  }
+
+  .radio-group label {
+    font-size: 18px;
+    margin: 14px 0;
+  }
+
+  /* Portfolio grid fix */
+  .image-container {
+    column-count: 1;   /* 1 column on mobile */
+    column-gap: 0;
+  }
+
+  /* Optional: make images full-width cleanly */
+  .image-container img,
+  .image-container video {
+    width: 100%;
+  }
+
+  /* Optional: center smaller images */
+  img.cu {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*  TABLET  */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .image-container {
+    column-count: 2;
+  }
+}
