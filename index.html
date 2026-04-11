@@ -45,6 +45,15 @@
 </div>
 
 <script>
+    function isMobile() {
+    return /iPhone|Android/i.test(navigator.userAgent);
+  }
+
+  // add class to body
+  if (isMobile()) {
+    document.body.classList.add('mobile');
+  }
+  
   const radios = document.querySelectorAll('.radio-group input[type="radio"]');
 
   radios.forEach(radio => {
